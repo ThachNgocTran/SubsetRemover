@@ -19,13 +19,9 @@ Implementation limitation:
 Because of using "long" as bitmap, so the maximum number of Set supported is 63. We can't use the left-most bit
     because function checkIfOnlyOneBitIsSet() will fail due to negative numbers.
  */
-public class SubsetRemover<T> {
+public class SubsetRemover {
 
-    public SubsetRemover(){
-
-    }
-
-    public List<Set<T>> purify(List<Set<T>> inputCol){
+    public static <T> List<Set<T>> purify(List<Set<T>> inputCol){
 
         // Create inverse list of elements (T).
         Map<T, Long> inverseCol = Maps.newHashMap();
@@ -49,7 +45,7 @@ public class SubsetRemover<T> {
     https://stackoverflow.com/questions/15951776/bitmask-how-to-determine-if-only-one-bit-is-set
     https://stackoverflow.com/questions/12483843/test-if-a-bitboard-have-only-one-bit-set-to-1
      */
-    private boolean checkIfOnlyOneBitIsSet(long input){ // 8 bytes (64 bit)
+    private static boolean checkIfOnlyOneBitIsSet(long input){ // 8 bytes (64 bit)
 
         Args.check(input > 0, "input must be > 0");
         return (input & (input - 1)) == 0;

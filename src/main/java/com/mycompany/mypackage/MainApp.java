@@ -25,8 +25,7 @@ public class MainApp
                                                         Sets.newHashSet(2, 3),
                                                         Sets.newHashSet(2, 4));
 
-            SubsetRemover<Integer> remover = new SubsetRemover<>();
-            List<Set<Integer>> res = remover.purify(test);
+            List<Set<Integer>> res = SubsetRemover.purify(test);
 
             // Should be [1,2,3] and [2,4]
             LOGGER.info(String.format("\ntest=%s\nres=%s", test, res));
@@ -36,8 +35,7 @@ public class MainApp
                     Sets.newHashSet("b", "c", "d"),
                     Sets.newHashSet("c", "d", "e"));
 
-            SubsetRemover<String> remover2 = new SubsetRemover<>();
-            List<Set<String>> res2 = remover2.purify(test2);
+            List<Set<String>> res2 = SubsetRemover.purify(test2);
 
             // Should be ["a", "b", "c", "d"] and ["c", "d", "e"]
             LOGGER.info(String.format("\ntest2=%s\nres2=%s", test2, res2));

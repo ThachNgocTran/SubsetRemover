@@ -9,7 +9,9 @@ Input: `[1,2,3]`, `[1,2]`, `[2,3]` and `[2,4]`
 
 Output: `[1,2,3]` and `[2,4]`
 
-I tried to create a compact class, thanks to Functional Programming in Java 8.
+I tried to create a generic compact/elegant class, thanks to Functional Programming in Java 8.
+
+Note: My implementation uses bit mask as `long` integer; thus, it only supports up to 63 input sets at maximum.
 
 Development Environment
 
